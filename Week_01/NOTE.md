@@ -216,5 +216,5 @@ private void siftDownComparable(int k, E x) {
 }
 ```
 
-以上分析了Priority Queue的重要方法的实现，进一步了解了优先队列的算法实现机制。
+以上分析了Priority Queue的重要方法的实现，进一步了解了优先队列的算法实现机制。此算法有一定难度，后续还需要加强理解。
 
