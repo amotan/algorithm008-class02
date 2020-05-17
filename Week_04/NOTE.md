@@ -94,3 +94,30 @@ else:
 不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前
 进行选择，有回退功能。
 
+
+
+### 四、半序数组问题
+
+使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+
+##### 代码思路：
+
+```python
+left, right = 0, len(array) - 1
+while left <= right:
+ mid = (left + right) / 2
+
+# 如果中间值大于前一位置数的值，并且小于后一位置数的值
+if (array[mid]>array[mid-1] && array[mid]<array[mid+1]): 
+  # 判断应该向左还是向右进行二分
+  if(array[mid-1]>array[mid-2] && array[mid-1]<array[mid]):
+    left = mid;
+  elif (array[mid+2]>array[mid+1] && array[mid]<array[mid+1]):
+    right = mid;
+# 情况都不满足，则是无序开始的地方
+else:
+  return mid;
+```
+
+
+
